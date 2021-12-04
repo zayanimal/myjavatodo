@@ -1,11 +1,12 @@
 package com.example.myjavatodo.model;
 
 import com.example.myjavatodo.entity.UserEntity;
+import lombok.Data;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class User {
+public @Data class User {
     private Long id;
     private String username;
     private List<Todo> todos;
@@ -16,32 +17,5 @@ public class User {
         model.setUsername(entity.getUsername());
         model.setTodos(entity.getTodos().stream().map(Todo::toModel).collect(Collectors.toList()));
         return model;
-    }
-
-    public User() {
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public List<Todo> getTodos() {
-        return todos;
-    }
-
-    public void setTodos(List<Todo> todos) {
-        this.todos = todos;
     }
 }

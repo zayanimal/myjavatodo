@@ -1,8 +1,9 @@
 package com.example.myjavatodo.model;
 
 import com.example.myjavatodo.entity.TodoEntity;
+import lombok.Data;
 
-public class Todo {
+public @Data class Todo {
     private Long id;
     private String title;
     private Boolean completed;
@@ -14,29 +15,5 @@ public class Todo {
         model.setTitle(entity.getTitle());
 
         return model;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public Boolean getCompleted() {
-        return completed;
-    }
-
-    public void setCompleted(Boolean completed) {
-        this.completed = completed;
     }
 }
